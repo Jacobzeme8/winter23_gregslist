@@ -26,6 +26,15 @@ get listingTemplate(){
 </div>`
 }
 
+
+get jobDetailsTemplate(){
+  return /*html*/`
+    <div>
+      <button class="btn btn-danger" data-bs-dismiss="modal" onclick="app.jobsController.deleteJob('${this.id}')">Delete This Job?</button>
+    </div>
+  `
+}
+
 static jobForm(){
   return/*html*/`
   <form onsubmit = "app.jobsController.handleJobsForm()">
@@ -42,7 +51,7 @@ static jobForm(){
 
 <div class="form-check mb-3">
   <label for="degree">Degree required</label>
-  <input type="checkbox" class="form-check-input" name="degree" required>
+  <input type="checkbox" class="form-check-input" name="degree">
 </div>
 
 <div class="form-floating mb-3">
@@ -51,13 +60,13 @@ static jobForm(){
 </div>
 
 <div class="form-floating mb-3">
-  <input type="url" class="form-control" name="imgUrl">
-  <label for="imgUrl">Image Url <i>(We are too lazy for uploads)</i></label>
+  <input type="url" class="form-control" name="image">
+  <label for="image">Image Url <i>(We are too lazy for uploads)</i></label>
 </div>
 
 <div class="d-flex my-4 gap-5 align-items-center">
   <button class="btn" type="reset">Cancel</button>
-  <button class="btn btn-primary" type="submit" data-bs-dismiss="offcanvas">Submit</button>
+  <button class="btn btn-primary" type="submit">Submit</button>
 </div>
   </form>
   `
