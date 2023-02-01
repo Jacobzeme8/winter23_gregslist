@@ -1,6 +1,9 @@
 import { appState } from "../AppState.js"
 
 class JobsService {
+  handleJobsForm() {
+    ;
+  }
   setJob(jobId) {
     const jobIndex = appState.jobs.find(j=> j.id == jobId)
     if(jobIndex < 0){

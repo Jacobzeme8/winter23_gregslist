@@ -2,6 +2,7 @@ import { setHTML, setText } from "../Utils/Writer.js"
 import { appState } from "../AppState.js"
 import { jobsService } from "../Services/JobsService.js"
 import { Pop } from "../Utils/Pop.js"
+import { Job } from "../Models/Job.js"
 
 function _drawJobs(){
   let jobs = appState.jobs
@@ -25,11 +26,19 @@ export class JobsController {
     }
   }
 
+  handleJobsForm(jobData){
+    try {
+      jobsService.handleJobsForm()
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+
   show() {
     
     setText('add-listing-button', '🪦 Dead end Job?')
     setText('listingFormLabel', '🪦 Dig up a new Job')
     _drawJobs()
-    setHTML('the-actual-form', 'Do your job lazy students')
+    setHTML('the-actual-form', Job.jobForm())
   }
 }

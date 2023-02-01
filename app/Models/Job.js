@@ -26,6 +26,41 @@ get listingTemplate(){
 </div>`
 }
 
+static jobForm(){
+  return/*html*/`
+  <form onsubmit = "app.jobsController.handleJobsForm()">
 
+  <div class="form-floating mb-3">
+  <input type="text" class="form-control" name="title" required minlength="2" maxlength="20">
+  <label for="title">Job Title</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" name="description" required>
+  <label for="description">Job Description</label>
+</div>
+
+<div class="form-check mb-3">
+  <label for="degree">Degree required</label>
+  <input type="checkbox" class="form-check-input" name="degree" required>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="number" class="form-control" name="salary" required min="0">
+  <label for="salary">salary</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="url" class="form-control" name="imgUrl">
+  <label for="imgUrl">Image Url <i>(We are too lazy for uploads)</i></label>
+</div>
+
+<div class="d-flex my-4 gap-5 align-items-center">
+  <button class="btn" type="reset">Cancel</button>
+  <button class="btn btn-primary" type="submit" data-bs-dismiss="offcanvas">Submit</button>
+</div>
+  </form>
+  `
+}
 
 }
