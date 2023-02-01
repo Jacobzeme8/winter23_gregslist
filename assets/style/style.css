@@ -13,3 +13,16 @@
   left: 1rem;
   user-select: none;
 }
+
+.job{
+  position: relative;
+}
+
+h2{
+  bottom: 5%;
+  font-size: x-large;
+  color: rgb(244, 174, 88);
+  filter: drop-shadow(0 0 15px rgb(96, 96, 249));
+  left: 1rem;
+  user-select: none;
+}
